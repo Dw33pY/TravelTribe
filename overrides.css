@@ -1,0 +1,63 @@
+/* ============================================================
+   Travel Tribe — navbar color overrides
+   Survives React hydration because it targets elements by
+   structure, NOT by the color classes React rewrites.
+   !important + unlayered = beats Tailwind's layered utilities.
+   Requires navbar-fix.js (adds .nav-scrolled to <header> at 40px)
+   ============================================================ */
+
+/* ============ BEFORE SCROLL — transparent navbar over dark hero ============ */
+
+/* Logo: "Travel" stays white */
+header nav a[aria-label*="Travel Tribe"] > span.font-display {
+  color: #ffffff !important;
+}
+
+/* Logo: "Tribe" sun-orange */
+header nav a[aria-label*="Travel Tribe"] > span.font-display > span {
+  color: #f9a03f !important;
+}
+
+/* Logo: "Vacations Ltd" light cream so it reads on the dark hero */
+header nav a[aria-label*="Travel Tribe"] > span.font-display > span + span {
+  color: rgba(244, 240, 236, 0.75) !important;
+}
+
+/* Menu links (About, Safaris...) + WhatsApp: white for visibility */
+header nav ul li a,
+header nav a[href*="wa.me"] {
+  color: #ffffff !important;
+}
+
+/* Link hover: glow orange — readable on dark AND light backgrounds */
+header nav ul li a:hover{
+  color: #f9a03f !important;
+}
+
+/* ============ AFTER SCROLL — light navbar ============ */
+
+/* Logo: "Travel" turns black (site's own warm ink black) */
+header.nav-scrolled nav a[aria-label*="Travel Tribe"] > span.font-display {
+  color: #211509 !important;
+}
+
+/* Logo: "Tribe" → deeper brand orange for contrast on the light navbar */
+header.nav-scrolled nav a[aria-label*="Travel Tribe"] > span.font-display > span {
+  color: #e8591c !important;
+}
+
+/* Logo: "Vacations Ltd" → clay */
+header.nav-scrolled nav a[aria-label*="Travel Tribe"] > span.font-display > span + span {
+  color: #a85638 !important;
+}
+
+/* Menu links + WhatsApp back to dark ink */
+header.nav-scrolled nav ul li a,
+header.nav-scrolled nav a[href*="wa.me"] {
+  color: #211509 !important;
+}
+
+/* Link hover after scroll: sun orange */
+header.nav-scrolled nav ul li a:hover{
+  color: #e8591c !important;
+}

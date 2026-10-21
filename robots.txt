@@ -1,0 +1,5 @@
+# robots.txt — Travel Tribe Vacations Ltd
+User-agent: *
+Allow: /
+
+Sitemap: https://www.traveltribevacations.co.ke/sitemap.xml
