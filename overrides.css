@@ -61,3 +61,40 @@ header.nav-scrolled nav a[href*="wa.me"] {
 header.nav-scrolled nav ul li a:hover{
   color: #e8591c !important;
 }
+
+/* ============================================================
+   DESTINATIONS SECTION — card details cut off on phones
+   The dark info panel floats over the photo (position:absolute,
+   bottom:4) inside a card wrapper that has overflow:hidden.
+   On small screens the panel is TALLER than the photo, so its
+   TOP is silently clipped: the location line ("Maasai Mara,
+   Kenya") and the first title line ("The stage of the Great")
+   disappear — only "Migration" stays visible.
+   Fix: below 768px, stop floating the panel and stack it UNDER
+   the photo. The card then grows with its content, so nothing
+   can ever be clipped, on any destination.
+   ============================================================ */
+
+@media (max-width: 767.98px) {
+  /* Info panel: normal block below the photo, solid ink
+     background (the 70% transparent one was meant for
+     sitting on top of a photo) */
+  #destinations
+    div[class*="overflow-hidden"][class*="rounded-3xl"]
+    > div[class*="backdrop-blur"] {
+    position: static !important;
+    background-color: #211509 !important;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Pill row on phones is a swipe strip by design — make pills
+   snap neatly instead of stopping half-cut (no visual change) */
+#destinations div[role="tablist"][class*="overflow-x-auto"] {
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+#destinations div[role="tablist"][class*="overflow-x-auto"] > button[role="tab"] {
+  scroll-snap-align: start;
+}
