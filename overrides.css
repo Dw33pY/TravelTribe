@@ -38,7 +38,7 @@ header nav ul li a:hover{
 
 /* Logo: "Travel" turns black (site's own warm ink black) */
 header.nav-scrolled nav a[aria-label*="Travel Tribe"] > span.font-display {
-  color: #211509 !important;
+  color: #433b33 !important;
 }
 
 /* Logo: "Tribe" → deeper brand orange for contrast on the light navbar */
