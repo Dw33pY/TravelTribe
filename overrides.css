@@ -10,7 +10,7 @@
 
 /* Logo: "Travel" stays white */
 header nav a[aria-label*="Travel Tribe"] > span.font-display {
-  color: #ffffff !important;
+  color: #f9a03f !important;
 }
 
 /* Logo: "Tribe" sun-orange */
@@ -20,7 +20,7 @@ header nav a[aria-label*="Travel Tribe"] > span.font-display > span {
 
 /* Logo: "Vacations Ltd" light cream so it reads on the dark hero */
 header nav a[aria-label*="Travel Tribe"] > span.font-display > span + span {
-  color: rgba(244, 240, 236, 0.75) !important;
+  color: #f9a03f !important;
 }
 
 /* Menu links (About, Safaris...) + WhatsApp: white for visibility */
@@ -30,7 +30,7 @@ header nav a[href*="wa.me"] {
 }
 
 /* Link hover: glow orange — readable on dark AND light backgrounds */
-header nav ul li a:hover{
+header nav ul li a:hover {
   color: #f9a03f !important;
 }
 
@@ -58,7 +58,7 @@ header.nav-scrolled nav a[href*="wa.me"] {
 }
 
 /* Link hover after scroll: sun orange */
-header.nav-scrolled nav ul li a:hover{
+header.nav-scrolled nav ul li a:hover {
   color: #e8591c !important;
 }
 
